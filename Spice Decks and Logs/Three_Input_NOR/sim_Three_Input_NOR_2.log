@@ -1,0 +1,40 @@
+Circuit: *** SPICE deck for cell sim_Three_Input_NOR_2{sch} from library Three_Input_NOR
+
+Ignoring BSIM parameter HDIF
+Ignoring BSIM parameter ACM
+Ignoring BSIM parameter XL
+Ignoring BSIM parameter XW
+Ignoring BSIM parameter HDIF
+Ignoring BSIM parameter ACM
+Ignoring BSIM parameter XL
+Ignoring BSIM parameter XW
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Direct Newton iteration for .op point succeeded.
+
+tdpr=2.94158e-010 FROM 7.9995e-009 TO 8.29366e-009
+tdpf=4.53144e-010 FROM 1.6665e-009 TO 2.11964e-009
+trise=4.00955e-010 FROM 8.10407e-009 TO 8.50502e-009
+tfall=3.79116e-010 FROM 1.89535e-009 TO 2.27447e-009
+
+
+Date: Fri Apr 17 03:40:17 2020
+Total elapsed time: 0.358 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 3898
+traniter = 3889
+tranpoints = 1512
+accept = 1343
+rejected = 169
+matrix size = 7
+fillins = 0
+solver = Normal
+Matrix Compiler1: 268 bytes object code size  0.2/0.2/[0.1]
+Matrix Compiler2: off  [0.2]/0.2/0.2
+
+

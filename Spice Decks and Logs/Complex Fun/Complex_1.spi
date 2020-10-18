@@ -1,0 +1,19 @@
+*** SPICE deck for cell Complex_1{sch} from library Complex
+*** Created on Mon Apr 13, 2020 22:10:24
+*** Last revised on Fri Apr 17, 2020 02:06:12
+*** Written on Sun Apr 19, 2020 02:02:28 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+.global gnd vdd x y z w
+
+*** TOP LEVEL CELL: Complex_1{sch}
+Mnmos@0 net@5 y gnd gnd NMOS L=0.36U W=2.34U
+Mnmos@1 f x net@5 gnd NMOS L=0.36U W=2.34U
+Mnmos@2 net@4 z gnd gnd NMOS L=0.36U W=2.34U
+Mnmos@4 f w net@4 gnd NMOS L=0.36U W=2.34U
+Mpmos@0 net@20 x f vdd PMOS L=0.36U W=4.32U
+Mpmos@1 net@20 y f vdd PMOS L=0.36U W=4.32U
+Mpmos@2 vdd w net@20 vdd PMOS L=0.36U W=4.32U
+Mpmos@3 vdd z net@20 vdd PMOS L=0.36U W=4.32U
+.END

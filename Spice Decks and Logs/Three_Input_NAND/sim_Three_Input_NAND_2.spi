@@ -1,0 +1,35 @@
+*** SPICE deck for cell sim_Three_Input_NAND_2{sch} from library Three_Input_NAND
+*** Created on Sun Apr 12, 2020 03:02:14
+*** Last revised on Fri Apr 17, 2020 01:47:22
+*** Written on Fri Apr 17, 2020 01:47:26 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** SUBCIRCUIT Three_Input_NAND__Three_Input_NAND_2 FROM CELL Three_Input_NAND_2{sch}
+.SUBCKT Three_Input_NAND__Three_Input_NAND_2 in1 in2 in3 out
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@6 out in1 net@51 gnd N L=0.36U W=5.22U
+Mnmos@7 net@51 in2 net@52 gnd N L=0.36U W=5.22U
+Mnmos@8 net@52 in3 gnd gnd N L=0.36U W=5.22U
+Mpmos@6 vdd in1 out vdd P L=0.36U W=6.12U
+Mpmos@7 vdd in2 out vdd P L=0.36U W=6.12U
+Mpmos@8 vdd in3 out vdd P L=0.36U W=6.12U
+.ENDS Three_Input_NAND__Three_Input_NAND_2
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: sim_Three_Input_NAND_2{sch}
+XThree_In@2 vdd in2 vdd out Three_Input_NAND__Three_Input_NAND_2
+
+* Spice Code nodes in cell cell 'sim_Three_Input_NAND_2{sch}'
+vdd vdd 0 dc 3.3
+vin2 in2 0 DC pulse 0 3.3  1n 1.333n 1.333n 5n 12.667n
+cload out 0 128fF
+.tran 0 100n
+.measure tdpr trig v(in2) val=1.65 fall =1 TARG v(out) val=1.65 rise=1
+.measure tdpf trig v(in2) val=1.65 rise =1 TARG v(out) val=1.65 fall=1
+.measure trise trig v(out) val=0.66 rise =1 TARG v(out) val=2.64 rise=1
+.measure tfall trig v(out) val=2.64 fall =1 TARG v(out) val=0.66 fall=1
+.include scmos18.txt
+.END

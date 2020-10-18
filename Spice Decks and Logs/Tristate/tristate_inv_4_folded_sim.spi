@@ -1,0 +1,57 @@
+*** SPICE deck for cell tristate_inv_4_folded_sim{lay} from library Tristate_Inv
+*** Created on Sat Apr 18, 2020 01:57:43
+*** Last revised on Sat Apr 18, 2020 20:37:20
+*** Written on Sun Apr 19, 2020 04:15:09 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** SUBCIRCUIT Tristate_Inv__tristate_inv_4_folded FROM CELL tristate_inv_4_folded{lay}
+.SUBCKT Tristate_Inv__tristate_inv_4_folded En En_ gnd In OUT vdd
+Mnmos@0 OUT In gnd gnd NMOS L=0.36U W=0.9U AS=3.564P AD=0.912P PS=9.27U PD=2.914U
+Mnmos@1 gnd In OUT gnd NMOS L=0.36U W=0.9U AS=0.912P AD=3.564P PS=2.914U PD=9.27U
+Mnmos@2 OUT In gnd gnd NMOS L=0.36U W=0.9U AS=3.564P AD=0.912P PS=9.27U PD=2.914U
+Mnmos@3 gnd In OUT gnd NMOS L=0.36U W=0.9U AS=0.912P AD=3.564P PS=2.914U PD=9.27U
+Mnmos@4 gnd In OUT gnd NMOS L=0.36U W=0.9U AS=0.912P AD=3.564P PS=2.914U PD=9.27U
+Mnmos@5 OUT In gnd gnd NMOS L=0.36U W=0.9U AS=3.564P AD=0.912P PS=9.27U PD=2.914U
+Mnmos@7 OUT In gnd gnd NMOS L=0.36U W=0.9U AS=3.564P AD=0.912P PS=9.27U PD=2.914U
+Mnmos@23 gnd In OUT gnd NMOS L=0.36U W=0.9U AS=0.912P AD=3.564P PS=2.914U PD=9.27U
+Mnmos@25 net@440 En OUT gnd NMOS L=0.36U W=0.9U AS=0.912P AD=0.486P PS=2.914U PD=1.98U
+Mnmos@26 OUT En net@440 gnd NMOS L=0.36U W=0.9U AS=0.486P AD=0.912P PS=1.98U PD=2.914U
+Mnmos@27 net@440 En OUT gnd NMOS L=0.36U W=0.9U AS=0.912P AD=0.486P PS=2.914U PD=1.98U
+Mnmos@28 OUT En net@440 gnd NMOS L=0.36U W=0.9U AS=0.486P AD=0.912P PS=1.98U PD=2.914U
+Mnmos@29 OUT En net@440 gnd NMOS L=0.36U W=0.9U AS=0.486P AD=0.912P PS=1.98U PD=2.914U
+Mnmos@30 net@440 En OUT gnd NMOS L=0.36U W=0.9U AS=0.912P AD=0.486P PS=2.914U PD=1.98U
+Mnmos@31 net@440 En OUT gnd NMOS L=0.36U W=0.9U AS=0.912P AD=0.486P PS=2.914U PD=1.98U
+Mnmos@32 OUT En net@440 gnd NMOS L=0.36U W=0.9U AS=0.486P AD=0.912P PS=1.98U PD=2.914U
+Mpmos@10 OUT In vdd vdd PMOS L=0.36U W=2.16U AS=4.268P AD=0.912P PS=10.578U PD=2.914U
+Mpmos@11 vdd In OUT vdd PMOS L=0.36U W=2.16U AS=0.912P AD=4.268P PS=2.914U PD=10.578U
+Mpmos@12 OUT In vdd vdd PMOS L=0.36U W=2.16U AS=4.268P AD=0.912P PS=10.578U PD=2.914U
+Mpmos@13 vdd In OUT vdd PMOS L=0.36U W=2.16U AS=0.912P AD=4.268P PS=2.914U PD=10.578U
+Mpmos@14 OUT In vdd vdd PMOS L=0.36U W=2.16U AS=4.268P AD=0.912P PS=10.578U PD=2.914U
+Mpmos@15 vdd In OUT vdd PMOS L=0.36U W=2.16U AS=0.912P AD=4.268P PS=2.914U PD=10.578U
+Mpmos@16 OUT In vdd vdd PMOS L=0.36U W=2.16U AS=4.268P AD=0.912P PS=10.578U PD=2.914U
+Mpmos@17 vdd In OUT vdd PMOS L=0.36U W=2.16U AS=0.912P AD=4.268P PS=2.914U PD=10.578U
+Mpmos@26 net@540 En_ OUT vdd PMOS L=0.36U W=2.16U AS=0.912P AD=1.166P PS=2.914U PD=3.24U
+Mpmos@27 OUT En_ net@540 vdd PMOS L=0.36U W=2.16U AS=1.166P AD=0.912P PS=3.24U PD=2.914U
+Mpmos@28 net@540 En_ OUT vdd PMOS L=0.36U W=2.16U AS=0.912P AD=1.166P PS=2.914U PD=3.24U
+Mpmos@29 OUT En_ net@540 vdd PMOS L=0.36U W=2.16U AS=1.166P AD=0.912P PS=3.24U PD=2.914U
+Mpmos@30 net@540 En_ OUT vdd PMOS L=0.36U W=2.16U AS=0.912P AD=1.166P PS=2.914U PD=3.24U
+Mpmos@31 OUT En_ net@540 vdd PMOS L=0.36U W=2.16U AS=1.166P AD=0.912P PS=3.24U PD=2.914U
+Mpmos@32 net@540 En_ OUT vdd PMOS L=0.36U W=2.16U AS=0.912P AD=1.166P PS=2.914U PD=3.24U
+Mpmos@33 OUT En_ net@540 vdd PMOS L=0.36U W=2.16U AS=1.166P AD=0.912P PS=3.24U PD=2.914U
+.ENDS Tristate_Inv__tristate_inv_4_folded
+
+*** TOP LEVEL CELL: tristate_inv_4_folded_sim{lay}
+Xtristate@0 vdd gnd gnd In tristate@0_OUT vdd Tristate_Inv__tristate_inv_4_folded
+
+* Spice Code nodes in cell cell 'tristate_inv_4_folded_sim{lay}'
+vdd vdd 0 dc 3.3
+vin in 0 DC pulse 0 3.3  1n .001n .001n 5n 10n
+cload out 0 16fF
+.tran 0 100n
+.measure tdpr trig v(in) val=1.65 fall =1 TARG v(out) val=1.65 rise=1
+.measure tdpf trig v(in) val=1.65 rise =1 TARG v(out) val=1.65 fall=1
+.measure trise trig v(out) val=0.66 rise =1 TARG v(out) val=2.64 rise=1
+.measure tfall trig v(out) val=2.64 fall =1 TARG v(out) val=0.66 fall=1
+.include D:\AUC\Spring_20\DD2\Electric\scmos18.txt
+.END

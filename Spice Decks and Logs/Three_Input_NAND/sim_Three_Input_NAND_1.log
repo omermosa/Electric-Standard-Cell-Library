@@ -1,0 +1,40 @@
+Circuit: *** SPICE deck for cell sim_Three_Input_NAND_1{sch} from library Three_Input_NAND
+
+Ignoring BSIM parameter HDIF
+Ignoring BSIM parameter ACM
+Ignoring BSIM parameter XL
+Ignoring BSIM parameter XW
+Ignoring BSIM parameter HDIF
+Ignoring BSIM parameter ACM
+Ignoring BSIM parameter XL
+Ignoring BSIM parameter XW
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Direct Newton iteration for .op point succeeded.
+
+tdpr=5.35471e-010 FROM 7.9995e-009 TO 8.53497e-009
+tdpf=3.20929e-010 FROM 1.6665e-009 TO 1.98743e-009
+trise=4.56956e-010 FROM 8.29744e-009 TO 8.7544e-009
+tfall=4.52703e-010 FROM 1.75964e-009 TO 2.21234e-009
+
+
+Date: Fri Apr 17 01:24:40 2020
+Total elapsed time: 0.204 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 3703
+traniter = 3673
+tranpoints = 1456
+accept = 1331
+rejected = 125
+matrix size = 7
+fillins = 0
+solver = Normal
+Matrix Compiler1: 322 bytes object code size  0.1/0.1/[0.0]
+Matrix Compiler2: off  [0.1]/0.1/0.2
+
+

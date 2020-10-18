@@ -1,0 +1,17 @@
+*** SPICE deck for cell Three_Input_NAND_2{sch} from library Three_Input_NAND
+*** Created on Sun Apr 12, 2020 01:47:53
+*** Last revised on Thu Apr 16, 2020 21:45:53
+*** Written on Thu Apr 16, 2020 21:46:01 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: Three_Input_NAND_2{sch}
+Mnmos@6 out in1 net@51 gnd N L=0.36U W=5.04U
+Mnmos@7 net@51 in2 net@52 gnd N L=0.36U W=5.04U
+Mnmos@8 net@52 in3 gnd gnd N L=0.36U W=5.04U
+Mpmos@6 vdd in1 out vdd P L=0.36U W=5.22U
+Mpmos@7 vdd in2 out vdd P L=0.36U W=5.22U
+Mpmos@8 vdd in3 out vdd P L=0.36U W=5.22U
+.END

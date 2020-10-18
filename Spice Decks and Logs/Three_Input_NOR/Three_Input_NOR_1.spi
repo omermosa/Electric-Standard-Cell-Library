@@ -1,0 +1,17 @@
+*** SPICE deck for cell Three_Input_NOR_1{sch} from library Three_Input_NOR
+*** Created on Fri Apr 10, 2020 22:27:46
+*** Last revised on Sat Apr 11, 2020 03:18:14
+*** Written on Fri Apr 17, 2020 02:55:12 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: Three_Input_NOR_1{sch}
+Mnmos@0 out in1 gnd gnd N L=0.36U W=0.9U
+Mnmos@1 out in2 gnd gnd N L=0.36U W=0.9U
+Mnmos@2 out in3 gnd gnd N L=0.36U W=0.9U
+Mpmos@0 net@1 in2 net@2 vdd P L=0.36U W=6.48U
+Mpmos@1 vdd in3 net@1 vdd P L=0.36U W=6.48U
+Mpmos@2 net@2 in1 out vdd P L=0.36U W=6.48U
+.END

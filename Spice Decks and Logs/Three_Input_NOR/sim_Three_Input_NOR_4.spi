@@ -1,0 +1,35 @@
+*** SPICE deck for cell sim_Three_Input_NOR_4{sch} from library Three_Input_NOR
+*** Created on Sat Apr 11, 2020 02:36:27
+*** Last revised on Fri Apr 17, 2020 04:03:44
+*** Written on Fri Apr 17, 2020 04:03:47 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** SUBCIRCUIT Three_Input_NOR__Three_Input_NOR_4 FROM CELL Three_Input_NOR_4{sch}
+.SUBCKT Three_Input_NOR__Three_Input_NOR_4 in1 in2 in3 out
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 out in1 gnd gnd N L=0.36U W=3.96U
+Mnmos@1 out in2 gnd gnd N L=0.36U W=3.96U
+Mnmos@2 out in3 gnd gnd N L=0.36U W=3.96U
+Mpmos@0 net@1 in2 net@9 vdd P L=0.36U W=25.56U
+Mpmos@1 vdd in3 net@1 vdd P L=0.36U W=25.56U
+Mpmos@2 net@9 in1 out vdd P L=0.36U W=25.56U
+.ENDS Three_Input_NOR__Three_Input_NOR_4
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: sim_Three_Input_NOR_4{sch}
+XThree_In@2 gnd in2 gnd out Three_Input_NOR__Three_Input_NOR_4
+
+* Spice Code nodes in cell cell 'sim_Three_Input_NOR_4{sch}'
+vdd vdd 0 dc 3.3
+vin2 in2 0 DC pulse 0 3.3  1n 1.333n 1.333n 5n 12.667n
+cload out 0 128fF
+.tran 0 100n
+.measure tdpr trig v(in2) val=1.65 fall =1 TARG v(out) val=1.65 rise=1
+.measure tdpf trig v(in2) val=1.65 rise =1 TARG v(out) val=1.65 fall=1
+.measure trise trig v(out) val=0.66 rise =1 TARG v(out) val=2.64 rise=1
+.measure tfall trig v(out) val=2.64 fall =1 TARG v(out) val=0.66 fall=1
+.include scmos18.txt
+.END

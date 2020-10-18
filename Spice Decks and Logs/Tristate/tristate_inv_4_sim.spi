@@ -1,0 +1,33 @@
+*** SPICE deck for cell tristate_inv_4_sim{sch} from library Tristate_Inv
+*** Created on Fri Apr 17, 2020 19:46:52
+*** Last revised on Fri Apr 17, 2020 22:05:46
+*** Written on Sun Apr 19, 2020 04:15:20 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** SUBCIRCUIT Tristate_Inv__tristate_inv_4 FROM CELL tristate_inv_4{sch}
+.SUBCKT Tristate_Inv__tristate_inv_4 En En_ In OUT
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 OUT En net@0 gnd NMOS L=0.36U W=7.2U
+Mnmos@1 net@0 In gnd gnd NMOS L=0.36U W=7.2U
+Mpmos@0 vdd In net@12 vdd PMOS L=0.36U W=20.16U
+Mpmos@1 net@12 En_ OUT vdd PMOS L=0.36U W=20.16U
+.ENDS Tristate_Inv__tristate_inv_4
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: tristate_inv_4_sim{sch}
+Xtristate@0 vdd gnd in out Tristate_Inv__tristate_inv_4
+
+* Spice Code nodes in cell cell 'tristate_inv_4_sim{sch}'
+vdd vdd 0 dc 3.3
+vin in 0 DC pulse 0 3.3  1n .001n .001n 5n 10n
+cload out 0 16fF
+.tran 0 100n
+.measure tdpr trig v(in) val=1.65 fall =1 TARG v(out) val=1.65 rise=1
+.measure tdpf trig v(in) val=1.65 rise =1 TARG v(out) val=1.65 fall=1
+.measure trise trig v(out) val=0.66 rise =1 TARG v(out) val=2.64 rise=1
+.measure tfall trig v(out) val=2.64 fall =1 TARG v(out) val=0.66 fall=1
+.include D:\AUC\Spring_20\DD2\Electric\scmos18.txt
+.END

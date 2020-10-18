@@ -1,0 +1,29 @@
+*** SPICE deck for cell Calc_Cload{sch} from library Inverter
+*** Created on Sun Apr 19, 2020 03:59:39
+*** Last revised on Sun Apr 19, 2020 04:00:47
+*** Written on Sun Apr 19, 2020 04:00:52 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** SUBCIRCUIT Inverter__Inverter_1 FROM CELL Inverter:Inverter_1{sch}
+.SUBCKT Inverter__Inverter_1 in out
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 out in gnd gnd N L=0.36U W=0.9U
+Mpmos@0 vdd in out vdd P L=0.36U W=2.16U
+.ENDS Inverter__Inverter_1
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: Inverter:Calc_Cload{sch}
+Rres@0 invPulse in 2.5k
+XInverter@0 invPulse out Inverter__Inverter_1
+
+* Spice Code nodes in cell cell 'Inverter:Calc_Cload{sch}'
+vdd vdd 0 dc 5
+vin in 0 DC pulse 0 5 1n 0.001n 0.001n 5n 10n
+.tran 0 10n
+.measure timeConstant + TRIG v(invPulse) VAL= 0 RISE=1 + TARG v(invPulse) VAL=3.15 RISE=1
+.measure falltime + TRIG v(out) VAL= 0 RISE=1 + TARG v(out) VAL=3.15 RISE=1
+.include scmos18.txt
+.END

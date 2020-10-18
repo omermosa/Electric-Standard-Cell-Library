@@ -1,0 +1,40 @@
+Circuit: *** SPICE deck for cell Complex_1_sim{sch} from library Complex
+
+Ignoring BSIM parameter HDIF
+Ignoring BSIM parameter ACM
+Ignoring BSIM parameter XL
+Ignoring BSIM parameter XW
+Ignoring BSIM parameter HDIF
+Ignoring BSIM parameter ACM
+Ignoring BSIM parameter XL
+Ignoring BSIM parameter XW
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Direct Newton iteration for .op point succeeded.
+
+tdpr=1.05912e-010 FROM 6.0015e-009 TO 6.10741e-009
+tdpf=1.0295e-010 FROM 1.0005e-009 TO 1.10345e-009
+trise=1.15016e-010 FROM 6.06759e-009 TO 6.18261e-009
+tfall=1.04194e-010 FROM 1.05476e-009 TO 1.15895e-009
+
+
+Date: Sun Apr 19 04:01:58 2020
+Total elapsed time: 0.226 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 6794
+traniter = 6763
+tranpoints = 2702
+accept = 2270
+rejected = 432
+matrix size = 8
+fillins = 0
+solver = Normal
+Matrix Compiler1: 372 bytes object code size  0.2/0.2/[0.1]
+Matrix Compiler2: 644 bytes object code size  0.1/0.3/[0.1]
+
+

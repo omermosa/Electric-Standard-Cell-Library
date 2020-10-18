@@ -1,0 +1,31 @@
+*** SPICE deck for cell sim_Inverter_4{sch} from library Inverter
+*** Created on Fri Apr 17, 2020 04:37:34
+*** Last revised on Fri Apr 17, 2020 05:30:12
+*** Written on Fri Apr 17, 2020 05:30:14 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** SUBCIRCUIT Inverter__Inverter_4 FROM CELL Inverter:Inverter_4{sch}
+.SUBCKT Inverter__Inverter_4 in out
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 out in gnd gnd N L=0.36U W=3.6U
+Mpmos@0 vdd in out vdd P L=0.36U W=8.46U
+.ENDS Inverter__Inverter_4
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: Inverter:sim_Inverter_4{sch}
+XInverter@1 in out Inverter__Inverter_4
+
+* Spice Code nodes in cell cell 'Inverter:sim_Inverter_4{sch}'
+vdd vdd 0 dc 3.3
+vin in 0 DC pulse 0 3.3  1n 1.333n 1.333n 5n 12.667n
+cload out 0 128fF
+.tran 0 100n
+.measure tdpr trig v(in) val=1.65 fall =1 TARG v(out) val=1.65 rise=1
+.measure tdpf trig v(in) val=1.65 rise =1 TARG v(out) val=1.65 fall=1
+.measure trise trig v(out) val=0.66 rise =1 TARG v(out) val=2.64 rise=1
+.measure tfall trig v(out) val=2.64 fall =1 TARG v(out) val=0.66 fall=1
+.include scmos18.txt
+.END

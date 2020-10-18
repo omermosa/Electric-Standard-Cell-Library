@@ -1,0 +1,41 @@
+*** SPICE deck for cell Complex_4_sim{sch} from library Complex
+*** Created on Fri Apr 17, 2020 16:40:36
+*** Last revised on Fri Apr 17, 2020 22:06:30
+*** Written on Sun Apr 19, 2020 04:05:20 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** SUBCIRCUIT Complex__Complex_4 FROM CELL Complex_4{sch}
+.SUBCKT Complex__Complex_4 f w x y z
+** GLOBAL gnd
+** GLOBAL vdd
+** GLOBAL x
+** GLOBAL y
+** GLOBAL z
+** GLOBAL w
+Mnmos@0 net@18 y gnd gnd NMOS L=0.36U W=9.36U
+Mnmos@1 f x net@18 gnd NMOS L=0.36U W=9.36U
+Mnmos@2 net@17 z gnd gnd NMOS L=0.36U W=9.36U
+Mnmos@3 f w net@17 gnd NMOS L=0.36U W=9.36U
+Mpmos@0 net@2 x f vdd PMOS L=0.36U W=17.28U
+Mpmos@1 net@2 y f vdd PMOS L=0.36U W=17.28U
+Mpmos@2 vdd w net@2 vdd PMOS L=0.36U W=17.28U
+Mpmos@3 vdd z net@2 vdd PMOS L=0.36U W=17.28U
+.ENDS Complex__Complex_4
+
+.global gnd vdd x y z w
+
+*** TOP LEVEL CELL: Complex_4_sim{sch}
+XComplex_@0 f vdd gnd gnd z Complex__Complex_4
+
+* Spice Code nodes in cell cell 'Complex_4_sim{sch}'
+vdd vdd 0 dc 3.3
+vz z 0 DC pulse 0 3.3  1n 1.333n 1.333n 5n 12.667n
+cload f 0 128fF
+.tran 0 100n
+.measure tdpr trig v(z) val=1.65 fall =1 TARG v(f) val=1.65 rise=1
+.measure tdpf trig v(z) val=1.65 rise =1 TARG v(f) val=1.65 fall=1
+.measure trise trig v(f) val=0.66 rise =1 TARG v(f) val=2.64 rise=1
+.measure tfall trig v(f) val=2.64 fall =1 TARG v(f) val=0.66 fall=1
+.include D:\AUC\Spring_20\DD2\Electric\scmos18.txt
+.END
